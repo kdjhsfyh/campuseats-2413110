@@ -1,4 +1,17 @@
+import { useState } from "react";
+
 function MenuItem({ item, onAdd }) {
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleAdd = () => {
+    onAdd(item);
+    setIsAdded(true);
+
+    setTimeout(() => {
+      setIsAdded(false);
+    }, 1000);
+  };
+
   return (
     <div className="card">
       <span className="tag">{item.category}</span>
@@ -10,11 +23,11 @@ function MenuItem({ item, onAdd }) {
 
       <button
         type="button"
-        className="btn"
-        onClick={() => onAdd(item)}
+        className={`btn ${isAdded ? "btn-added" : ""}`}
+        onClick={handleAdd}
         disabled={!item.available}
       >
-        {item.available ? "Add to cart" : "Unavailable"}
+        {!item.available ? "Unavailable" : isAdded ? "Added ✓" : "Add to cart"}
       </button>
     </div>
   );
