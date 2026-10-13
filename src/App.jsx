@@ -3,6 +3,7 @@ import vendors from "./data/vendors.js";
 import Header from "./components/Header.jsx";
 import VendorCard from "./components/VendorCard.jsx";
 import Menu from "./components/Menu.jsx";
+import SearchBar from "./components/SearchBar.jsx";
 
 function App() {
   const [selectedVendorId, setSelectedVendorId] = useState(vendors[0].id);
@@ -34,7 +35,7 @@ function App() {
         </div>
 
         <h2 className="section-title">Menu: {selectedVendor.name}</h2>
-
+        <SearchBar />
         <Menu items={selectedVendor.menu} onAdd={handleAddToCart} />
       </main>
 
