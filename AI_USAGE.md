@@ -15,4 +15,11 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - Tool(s): Chatgpt
 - What I asked for: help identify react code errors, understand component state and props, and align .jsx class names with the provided css starter.
 - What I kept, changed or rejected, and why: i kept the suggested fixes for the missing state declarations in App.jsx, updated component class names to match index.css.
-- One thing the AI got wrong and how I fixed it: The ai suggested class names that did not match the provided css starter. i corrected it to use the existing css classes, such as header, card, tag, and btn.
+- One thing the AI got wrong and how I fixed it: the ai suggested class names that did not match the provided css starter. i corrected it to use the existing css classes, such as header, card, tag, and btn.
+
+## Week 3
+
+- Tool(s): Chatgpt
+- What I asked for: help me understand lab 3 requirements, and assist when there's error.
+- What I kept, changed or rejected, and why: modified the suggested code so it'll fit with my existing project requirements.
+- One thing the AI got wrong and how I fixed it: verified the suggested code to match with the lab requirements.
