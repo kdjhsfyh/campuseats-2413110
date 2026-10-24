@@ -39,7 +39,7 @@ function isVendorOpen(openHours, date = new Date()) {
     return currentTime >= openingTime && currentTime < closingTime;
   }
 
-  // Also supports cafés that close after midnight.
+  //supports cafes that close after midnight.
   return currentTime >= openingTime || currentTime < closingTime;
 }
 

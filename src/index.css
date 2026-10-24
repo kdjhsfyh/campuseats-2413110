@@ -50,13 +50,31 @@ body {
   color: #fff;
   text-decoration: none;
 }
+.cart {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
 .badge {
+  position: absolute;
+  top: -8px;
+  right: -9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
   background: #fff;
   color: var(--green);
-  border-radius: 999px;
-  padding: 0 0.5rem;
+  border-radius: 50%;
+  font-size: 0.7rem;
   font-weight: 700;
-  font-size: 0.85rem;
+  line-height: 1;
 }
 
 .container {
@@ -149,7 +167,7 @@ body {
   font-size: 0.85rem;
 }
 
-/* Week 2 additions */
+/*week 2*/
 .vendor-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -183,7 +201,7 @@ button.card:hover {
   font-weight: 600;
 }
 
-/* Week 3 additions */
+/*week 3*/
 .link {
   background: none;
   border: 0;
@@ -277,7 +295,7 @@ button.card:hover {
   border-left: 4px solid #b3261e;
 }
 
-/* Week 4 additions */
+/*week 4*/
 .nav a.active {
   text-decoration: underline;
   text-underline-offset: 6px;
@@ -307,7 +325,7 @@ a.card:hover {
   color: inherit;
 }
 
-/* Week 5 additions */
+/*week 5*/
 .auth-page {
   max-width: 420px;
   margin: 2rem auto;
@@ -329,7 +347,7 @@ a.card:hover {
   align-items: center;
 }
 
-/* Week 6 additions */
+/*week 6*/
 .status-steps {
   display: flex;
   gap: 0.4rem;
@@ -351,7 +369,7 @@ a.card:hover {
   color: #fff;
 }
 
-/* Week 7 additions */
+/*week 7*/
 .row {
   display: flex;
   justify-content: space-between;
@@ -382,7 +400,7 @@ a.card:hover {
   margin-bottom: 0.5rem;
 }
 
-/* Week 10: service worker messages */
+/*week 10*/
 .toast {
   position: fixed;
   right: 1rem;
@@ -412,7 +430,7 @@ a.card:hover {
   text-decoration: underline;
 }
 
-/* Week 11: offline-first */
+/*week 11*/
 .offline-banner {
   background: #fff4e0;
   color: #7a4b00;
@@ -432,7 +450,7 @@ a.card:hover {
   font-weight: 600;
 }
 
-/* Week 9: an installable app must fit a phone screen */
+/*week 9*/
 @media (max-width: 640px) {
   .header {
     flex-wrap: wrap;
@@ -449,7 +467,7 @@ a.card:hover {
   }
 }
 
-/* Modern CampusEats search bar */
+/*search bar*/
 .search-bar {
   display: flex;
   align-items: center;
@@ -503,9 +521,59 @@ a.card:hover {
   outline: none;
 }
 
-/* Visual feedback after adding an item to cart */
 .btn-added {
   background-color: #16a34a;
   border-color: #16a34a;
   color: #ffffff;
+}
+
+/*week 3 additional task*/
+
+.skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton {
+  background: #e4e7eb;
+  border-radius: 8px;
+  animation: skeleton-pulse 1.2s ease-in-out infinite alternate;
+}
+
+.skeleton-thumb {
+  width: 64px;
+  height: 64px;
+}
+
+.skeleton-title {
+  width: 65%;
+  height: 20px;
+}
+
+.skeleton-text {
+  width: 90%;
+  height: 14px;
+}
+
+.skeleton-button {
+  width: 100%;
+  height: 36px;
+  margin-top: 0.5rem;
+}
+
+@keyframes skeleton-pulse {
+  from {
+    opacity: 0.55;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
 }

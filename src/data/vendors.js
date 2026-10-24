@@ -48,7 +48,7 @@ const vendors = [
       },
       {
         id: "yumsjom-6",
-        name: "Iced Milo Truck edition",
+        name: "Iced Milo Truck",
         description:
           "Chilled chocolate malt drink fresh as from the Milo Truck.",
         price: 3.0,

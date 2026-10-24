@@ -1,16 +1,16 @@
-function Header({ cartCount }) {
+function Header({ cartCount, onShowMenu, onShowCart }) {
   return (
     <header className="header">
-      <a href="#" className="logo-link">
-        <h1 className="logo">CampusEats 🍽️</h1>
-      </a>
+      <h1 className="logo">CampusEats</h1>
 
       <nav className="nav">
-        <span>Order your favourite campus meals!</span>
+        <button type="button" className="link" onClick={onShowMenu}>
+          Vendors
+        </button>
 
-        <span className="badge">
-          🛒 {cartCount} {cartCount === 1 ? "item" : "items"}
-        </span>
+        <button type="button" className="link cart" onClick={onShowCart}>
+          Cart <span className="badge">{cartCount}</span>
+        </button>
       </nav>
     </header>
   );
