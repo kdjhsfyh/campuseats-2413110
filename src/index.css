@@ -304,14 +304,27 @@ button.card:hover {
   color: #fff;
   text-decoration: none;
 }
+
 a.card {
   text-decoration: none;
   color: inherit;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
 a.card:hover {
-  border-color: var(--green-light);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
 }
+
+a.card:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
 .container a {
   color: var(--green);
 }
@@ -467,20 +480,20 @@ a.card:hover {
   }
 }
 
-/*search bar*/
+/* Search bar */
 .search-bar {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
-  max-width: 460px;
-  margin: 16px 0 24px;
-  padding: 0 18px;
-  min-height: 50px;
+  max-width: 420px;
+  margin: 14px 0 22px;
+  padding: 0 14px;
+  min-height: 44px;
   background: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
@@ -488,23 +501,22 @@ a.card:hover {
 }
 
 .search-bar:focus-within {
-  border-color: var(--primary-color, #7c3aed);
-  box-shadow: 0 0 0 3px
-    color-mix(in srgb, var(--primary-color, #7c3aed) 12%, transparent);
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 
 .search-icon {
-  font-size: 25px;
+  font-size: 14px;
+  font-weight: 600;
   line-height: 1;
-  color: #888888;
+  color: var(--muted);
   flex-shrink: 0;
-  transform: translateY(-4px);
 }
 
 .search-input {
   width: 100%;
   min-width: 0;
-  padding: 14px 0;
+  padding: 10px 0;
   border: none;
   outline: none;
   background: transparent;
@@ -576,4 +588,7 @@ a.card:hover {
   .skeleton {
     animation: none;
   }
+}
+.order-card {
+  margin-bottom: 1rem;
 }

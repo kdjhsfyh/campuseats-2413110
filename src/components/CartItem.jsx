@@ -1,4 +1,8 @@
-function CartItem({ line, onChangeQty, onRemove }) {
+import { useCart } from "../hooks/useCart.js";
+
+function CartItem({ line }) {
+  const { changeQty, removeFromCart } = useCart();
+
   const { item, qty } = line;
 
   return (
@@ -9,13 +13,13 @@ function CartItem({ line, onChangeQty, onRemove }) {
       </div>
 
       <div className="qty">
-        <button type="button" onClick={() => onChangeQty(item.id, -1)}>
-          −
+        <button type="button" onClick={() => changeQty(item.id, -1)}>
+          -
         </button>
 
         <span>{qty}</span>
 
-        <button type="button" onClick={() => onChangeQty(item.id, 1)}>
+        <button type="button" onClick={() => changeQty(item.id, 1)}>
           +
         </button>
       </div>
@@ -25,7 +29,7 @@ function CartItem({ line, onChangeQty, onRemove }) {
       <button
         type="button"
         className="link danger"
-        onClick={() => onRemove(item.id)}
+        onClick={() => removeFromCart(item.id)}
       >
         Remove
       </button>

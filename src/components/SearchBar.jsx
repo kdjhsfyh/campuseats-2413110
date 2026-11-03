@@ -1,9 +1,7 @@
 function SearchBar({ searchTerm, onSearchChange }) {
   return (
     <div className="search-bar">
-      <span className="search-icon" aria-hidden="true">
-        ⌕
-      </span>
+      <span className="search-icon">Search:</span>
 
       <input
         type="text"

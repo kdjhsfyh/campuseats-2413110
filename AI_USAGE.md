@@ -23,3 +23,10 @@ Add a new section every week, before you tag. Did not use AI? Write "None" under
 - What I asked for: help me understand lab 3 requirements, and assist when there's error.
 - What I kept, changed or rejected, and why: modified the suggested code so it'll fit with my existing project requirements.
 - One thing the AI got wrong and how I fixed it: verified the suggested code to match with the lab requirements.
+
+## Week 4
+
+- Tool(s): Chatgpt
+- What I asked for: help me understand and complete Lab 4, understand react router navigation, vendor menu search and order history
+- What I kept, changed or rejected, and why: i used the guidance to implement and connect the required features with my existing project. i also adjusted the css to improve the search bar and order history layout. i rejected suggestions for extra features that were not needed by the lab
+- One thing the AI got wrong and how I fixed it: some suggested styling and additional functionality were not necessary for my lab requirements. i checked the changes against my project and kept only the parts that were relevant

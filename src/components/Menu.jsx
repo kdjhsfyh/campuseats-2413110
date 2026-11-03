@@ -1,6 +1,9 @@
 import MenuItem from "./MenuItem.jsx";
+import { useCart } from "../hooks/useCart.js";
 
-function Menu({ items, onAdd }) {
+function Menu({ items }) {
+  const { addToCart } = useCart();
+
   if (items.length === 0) {
     return <p>No items on this menu yet.</p>;
   }
@@ -8,7 +11,7 @@ function Menu({ items, onAdd }) {
   return (
     <div className="grid">
       {items.map((item) => (
-        <MenuItem key={item.id} item={item} onAdd={onAdd} />
+        <MenuItem key={item.id} item={item} onAdd={addToCart} />
       ))}
     </div>
   );

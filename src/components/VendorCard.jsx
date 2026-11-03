@@ -1,67 +1,8 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
-function isVendorOpen(openHours, date = new Date()) {
-  const times = openHours.match(/(\d{1,2}):(\d{2})\s*(am|pm)/gi);
-
-  if (!times || times.length < 2) {
-    return false;
-  }
-
-  const toMinutes = (time) => {
-    const match = time.match(/(\d{1,2}):(\d{2})\s*(am|pm)/i);
-
-    let hour = Number(match[1]);
-    const minute = Number(match[2]);
-    const period = match[3].toLowerCase();
-
-    if (period === "am" && hour === 12) hour = 0;
-    if (period === "pm" && hour !== 12) hour += 12;
-
-    return hour * 60 + minute;
-  };
-
-  const openingTime = toMinutes(times[0]);
-  const closingTime = toMinutes(times[1]);
-
-  const parts = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Asia/Kuala_Lumpur",
-    hour: "2-digit",
-    minute: "2-digit",
-    hourCycle: "h23",
-  }).formatToParts(date);
-
-  const hour = Number(parts.find((part) => part.type === "hour").value);
-  const minute = Number(parts.find((part) => part.type === "minute").value);
-
-  const currentTime = hour * 60 + minute;
-
-  if (openingTime < closingTime) {
-    return currentTime >= openingTime && currentTime < closingTime;
-  }
-
-  //supports cafes that close after midnight.
-  return currentTime >= openingTime || currentTime < closingTime;
-}
-
-function VendorCard({ vendor, isSelected, onSelect }) {
-  const [now, setNow] = useState(() => new Date());
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNow(new Date());
-    }, 60_000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const isOpen = isVendorOpen(vendor.openHours, now);
-
+function VendorCard({ vendor }) {
   return (
-    <button
-      type="button"
-      className={`card vendor-card ${isSelected ? "selected" : ""}`}
-      onClick={() => onSelect(vendor.id)}
-    >
+    <Link to={`/vendor/${vendor.id}`} className="card vendor-card">
       <div className="thumb">{vendor.name.charAt(0)}</div>
 
       <div>
@@ -69,11 +10,11 @@ function VendorCard({ vendor, isSelected, onSelect }) {
         <p className="muted">{vendor.location}</p>
         <p className="muted">{vendor.openHours}</p>
 
-        <span className={`status ${isOpen ? "open" : "closed"}`}>
-          {isOpen ? "Open" : "Closed"}
+        <span className={`status ${vendor.isOpen ? "open" : "closed"}`}>
+          {vendor.isOpen ? "Open" : "Closed"}
         </span>
       </div>
-    </button>
+    </Link>
   );
 }
 

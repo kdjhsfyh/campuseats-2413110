@@ -27,7 +27,7 @@ function MenuItem({ item, onAdd }) {
         onClick={handleAdd}
         disabled={!item.available}
       >
-        {!item.available ? "Unavailable" : isAdded ? "Added ✓" : "Add to cart"}
+        {!item.available ? "Unavailable" : isAdded ? "Added !" : "Add to cart"}
       </button>
     </div>
   );
